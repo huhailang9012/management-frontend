@@ -10,4 +10,4 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./dist:/
+      - ./dist:/usr/share/nginx/share
