@@ -1,0 +1,13 @@
+version: '3'
+services:
+  ae:
+    image: nginx:latest
+    build:
+      context: .
+    container_name: nginx-web
+    restart: always
+    privileged: true
+    ports:
+      - "8080:80"
+    volumes:
+      - ./dist:/
