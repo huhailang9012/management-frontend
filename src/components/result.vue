@@ -20,7 +20,7 @@
                               匹配耗时:<span style="color: dodgerblue;margin-right: 4px"  >{{item.align_time}}</span>
                               生成指纹耗时:<span style="color: dodgerblue;margin-right: 4px"  >{{item.fingerprint_time}}</span>
                               创建时间:<span style="color: dodgerblue;margin-right: 4px"  >{{item.date_created}}</span>
-                              视频封面：<img src="http://10.161.203.250:9000/images/fb365ae18fac3a623bf8f9e13705e724.jpg"
+                              视频封面：<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605800580343&di=5867fc96cd845f59be27fbf37bd8fdda&imgtype=0&src=http%3A%2F%2Fgss0.baidu.com%2F-vo3dSag_xI4khGko9WTAnF6hhy%2Fzhidao%2Fpic%2Fitem%2Fac4bd11373f08202dfdbcc0749fbfbedab641bb8.jpg"
                                         style="height: 30px;position: absolute;">
                         </div>
                         <div v-for="(iitem, iidex) in item.related_audios" :key="iidex" name="iidex"  >
@@ -62,9 +62,9 @@ name: "result",
     },
     methods:{
     dosearch: function () {
-      this.show()
+     // this.$api('http://10.170.229.65:8000/app/execute')
       if (this.input !==''){
-        setInterval(this.show,15000);
+        setInterval(this.show,10000);
       }
       else{
         alert("搜索栏不能为空！")
@@ -72,6 +72,7 @@ name: "result",
     },
     show:function () {
           this.tableData=[]
+
           this.$api.get('http://localhost:8000/matched/information/index', {"key": this.input},
               mydata => {
                console.log(mydata)
